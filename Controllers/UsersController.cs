@@ -34,6 +34,9 @@ namespace WebApi.Controllers
             _appSettings = appSettings.Value;
         }
 
+        /*
+            Sign In User.
+        */
         [AllowAnonymous]
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody]AuthenticateModel model)
@@ -68,6 +71,9 @@ namespace WebApi.Controllers
             });
         }
 
+        /*
+            Register User.
+        */
         [AllowAnonymous]
         [HttpPost("register")]
         public IActionResult Register([FromBody]RegisterModel model)
@@ -88,6 +94,9 @@ namespace WebApi.Controllers
             }
         }
 
+        /*
+            Get All Users.
+        */
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -96,6 +105,9 @@ namespace WebApi.Controllers
             return Ok(model);
         }
 
+        /*
+            Get User.
+        */
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -104,6 +116,10 @@ namespace WebApi.Controllers
             return Ok(model);
         }
 
+
+        /*
+            Update User.
+        */
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody]UpdateModel model)
         {
@@ -124,6 +140,9 @@ namespace WebApi.Controllers
             }
         }
 
+        /*
+            Delete User.
+        */
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
